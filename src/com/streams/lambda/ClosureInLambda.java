@@ -52,6 +52,17 @@ public class ClosureInLambda {
        // Consumer<Integer> consumer = (count)-> System.out.println(count);
        // Consumer<Integer> consumer = (count2)-> {int count = 4;};
 
+// Rule 6 : but inside anonymous class implementation redeclare is ok but you cannot ONLY increase it like lambda
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        int count = 5;
+                        count++;
+                    }
+                }
+        ).start();
+
 
 
 
